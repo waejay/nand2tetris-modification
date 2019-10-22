@@ -63,10 +63,10 @@ Add additional notes about how to deploy this on a live system
 ## Authors
 
 * **John Bao Nguyen** - *Project Setup* - [@waejay](https://github.com/waejay)
-* **Chris Jeon**
-* **Mason Witcraft**
-* **Brett Norton**
-* **Jason Tieu**
+* **Chris J. Jeon**
+* **Mason B. Witcraft**
+* **Brett M. Norton**
+* **Jason F. Tieu**
 * **Dr. Nicolas Grounds**
 
 ## License
