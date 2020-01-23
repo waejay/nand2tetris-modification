@@ -178,166 +178,218 @@
       </Tab>
       <Tab text="VMEmulator">
          <content>
-            <VBox prefHeight="400.0" prefWidth="640.0">
-               <children>
-                  <MenuBar VBox.vgrow="NEVER">
-                     <menus>
-                        <Menu mnemonicParsing="false" text="File">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Load Program" />
-                              <MenuItem mnemonicParsing="false" text="Load Script" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Quit" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="View">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="New" />
-                              <MenuItem mnemonicParsing="false" text="Open…" />
-                              <Menu mnemonicParsing="false" text="Open Recent" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Close" />
-                              <MenuItem mnemonicParsing="false" text="Save" />
-                              <MenuItem mnemonicParsing="false" text="Save As…" />
-                              <MenuItem mnemonicParsing="false" text="Revert" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Preferences…" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Quit" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Run">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Single Step" />
-                              <MenuItem mnemonicParsing="false" text="Run" />
-                              <MenuItem mnemonicParsing="false" text="Stop" />
-                              <MenuItem mnemonicParsing="false" text="Reset" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Breakpoints" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Help">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Usage" />
-                              <MenuItem mnemonicParsing="false" text="Help" />
-                           </items>
-                        </Menu>
-                     </menus>
-                  </MenuBar>
-                  <ToolBar prefHeight="40.0" prefWidth="200.0">
-                     <items>
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Separator orientation="VERTICAL" />
-                        <Slider blockIncrement="1.0" majorTickUnit="1.0" max="4.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
-                        <SplitMenuButton mnemonicParsing="false" text="SplitMenuButton">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1" />
-                            <MenuItem mnemonicParsing="false" text="Action 2" />
-                          </items>
-                        </SplitMenuButton>
-                     </items>
-                  </ToolBar>
-                  <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="369.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <VBox prefHeight="55.0" prefWidth="678.0" BorderPane.alignment="CENTER">
                      <children>
-                        <HBox prefHeight="375.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <VBox prefHeight="375.0" prefWidth="151.0">
-                                 <children>
-                                    <SplitPane dividerPositions="0.4450402144772118, 0.5" orientation="VERTICAL" prefHeight="375.0" prefWidth="190.0">
+                        <MenuBar>
+                           <menus>
+                              <Menu mnemonicParsing="false" text="File">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Load Program" />
+                                    <MenuItem mnemonicParsing="false" text="Load Script" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Quit" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="View">
+                                 <items>
+                                    <Menu mnemonicParsing="false" text="Animate">
                                        <items>
-                                          <TitledPane prefHeight="200.0" prefWidth="200.0" text="Program">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                             </content>
-                                          </TitledPane>
-                                          <TitledPane prefHeight="204.0" prefWidth="149.0" text="Stack">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" wrappingWidth="42.57373046875" />
-                                             </content>
-                                          </TitledPane>
-                                          <TitledPane prefHeight="200.0" prefWidth="149.0" text="Call Stack">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                             </content>
-                                          </TitledPane>
+                                          <MenuItem mnemonicParsing="false" text="Program flow" />
+                                          <MenuItem mnemonicParsing="false" text="Program &amp; data flow" />
+                                          <MenuItem mnemonicParsing="false" text="No Animation" />
                                        </items>
-                                    </SplitPane>
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="375.0" prefWidth="151.0">
-                                 <children>
-                                    <SplitPane dividerPositions="0.4450402144772118, 0.5, 0.5, 0.5, 0.5" orientation="VERTICAL" prefHeight="375.0" prefWidth="190.0">
+                                    </Menu>
+                                    <Menu mnemonicParsing="false" text="View">
                                        <items>
-                                          <TitledPane prefHeight="200.0" prefWidth="200.0" text="Static">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                             </content>
-                                          </TitledPane>
-                                          <TitledPane prefHeight="204.0" prefWidth="149.0" text="Local">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                             </content>
-                                          </TitledPane>
-                                          <TitledPane prefHeight="204.0" prefWidth="149.0" text="Argument">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                             </content>
-                                          </TitledPane>
-                                          <TitledPane prefHeight="204.0" prefWidth="149.0" text="This">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                             </content>
-                                          </TitledPane>
-                                          <TitledPane prefHeight="204.0" prefWidth="149.0" text="That">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                             </content>
-                                          </TitledPane>
-                                          <TitledPane prefHeight="204.0" prefWidth="149.0" text="Temp">
-                                             <content>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                             </content>
-                                          </TitledPane>
+                                          <MenuItem mnemonicParsing="false" text="Script" />
+                                          <MenuItem mnemonicParsing="false" text="Output" />
+                                          <MenuItem mnemonicParsing="false" text="Compare" />
+                                          <MenuItem mnemonicParsing="false" text="Screen" />
                                        </items>
-                                    </SplitPane>
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="375.0" prefWidth="338.0">
-                                 <children>
-                                    <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="375.0" prefWidth="338.0">
-                                      <items>
-                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
-                                             <children>
-                                                <ButtonBar layoutY="143.0" prefHeight="40.0" prefWidth="336.0" />
-                                             </children>
-                                          </AnchorPane>
-                                          <SplitPane dividerPositions="0.29797979797979796" prefHeight="160.0" prefWidth="200.0">
-                                            <items>
-                                                <TitledPane prefHeight="204.0" prefWidth="149.0" text="Global Stack">
-                                                   <content>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                                   </content>
-                                                </TitledPane>
-                                                <TitledPane prefHeight="182.0" prefWidth="213.0" text="RAM">
-                                                   <content>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                                   </content>
-                                                </TitledPane>
-                                            </items>
-                                          </SplitPane>
-                                      </items>
-                                    </SplitPane>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </HBox>
+                                    </Menu>
+                                    <Menu mnemonicParsing="false" text="Format">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Decimal" />
+                                          <MenuItem mnemonicParsing="false" text="Hexadecimal" />
+                                          <MenuItem mnemonicParsing="false" text="Binary" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Run">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Single Step" />
+                                    <MenuItem mnemonicParsing="false" text="Run" />
+                                    <MenuItem mnemonicParsing="false" text="Stop" />
+                                    <MenuItem mnemonicParsing="false" text="Reset" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Breakpoints" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Help">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Usage" />
+                                    <MenuItem mnemonicParsing="false" text="Help" />
+                                 </items>
+                              </Menu>
+                           </menus>
+                        </MenuBar>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0">
+                           <items>
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="16.0" text="Button" />
+                              <Separator orientation="VERTICAL" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="2.0" text="Button" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Separator orientation="VERTICAL" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Separator orientation="VERTICAL" />
+                              <Slider blockIncrement="1.0" majorTickUnit="1.0" max="4.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" prefHeight="38.0" prefWidth="67.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                              <SplitMenuButton minWidth="-Infinity" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="Animate">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Program flow" />
+                                    <MenuItem mnemonicParsing="false" text="Program &amp; data flow" />
+                                    <MenuItem mnemonicParsing="false" text="No animation" />
+                                 </items>
+                              </SplitMenuButton>
+                              <SplitMenuButton mnemonicParsing="false" text="View">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Program flow" />
+                                    <MenuItem mnemonicParsing="false" text="Program &amp; data flow" />
+                                    <MenuItem mnemonicParsing="false" text="No animation" />
+                                 </items>
+                              </SplitMenuButton>
+                              <SplitMenuButton mnemonicParsing="false" text="Format">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Decimal" />
+                                    <MenuItem mnemonicParsing="false" text="Hexa" />
+                                    <MenuItem mnemonicParsing="false" text="Binary" />
+                                 </items>
+                              </SplitMenuButton>
+                           </items>
+                        </ToolBar>
                      </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
+                  </VBox>
+               </top>
+               <center>
+                  <SplitPane dividerPositions="0.5" prefHeight="481.0" prefWidth="678.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <SplitPane dividerPositions="0.5" minHeight="-Infinity" prefHeight="446.0" prefWidth="197.0">
+                           <items>
+                              <SplitPane dividerPositions="0.4, 0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                 <items>
+                                    <BorderPane prefHeight="118.0" prefWidth="163.0">
+                                       <top>
+                                          <Label text="Program" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <TextArea minHeight="-Infinity" prefHeight="163.0" prefWidth="163.0" text="Text&#10;" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <top>
+                                          <Label text="Stack" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <TextArea minHeight="-Infinity" prefHeight="97.0" prefWidth="163.0" text="Text" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <top>
+                                          <Label text="Call Stack" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <TextArea minHeight="-Infinity" prefHeight="85.0" prefWidth="163.0" text="Text&#10;" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                 </items>
+                              </SplitPane>
+                              <SplitPane dividerPositions="0.5, 0.5, 0.5, 0.5, 0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                 <items>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="Static">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="Local">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="Argument">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="This">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="That">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="Temp">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                 </items>
+                              </SplitPane>
+                           </items>
+                        </SplitPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="448.0" prefWidth="334.0" BorderPane.alignment="CENTER">
+                                 <items>
+                                    <TextArea minHeight="-Infinity" prefHeight="258.0" prefWidth="378.0" />
+                                    <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                       <items>
+                                          <SplitPane dividerPositions="0.49722222222222223" minHeight="-Infinity" prefHeight="24.0" prefWidth="360.0">
+                                             <items>
+                                                <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="204.0" text="Button" />
+                                                <TextArea prefHeight="200.0" prefWidth="200.0" />
+                                             </items>
+                                          </SplitPane>
+                                          <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+                                             <items>
+                                                <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                                   <top>
+                                                      <Label text="Global Stack" BorderPane.alignment="CENTER" />
+                                                   </top>
+                                                   <center>
+                                                      <TextArea minHeight="-Infinity" prefHeight="267.0" prefWidth="176.0" text="text" BorderPane.alignment="CENTER" />
+                                                   </center>
+                                                </BorderPane>
+                                                <BorderPane minHeight="-Infinity" prefHeight="164.0" prefWidth="176.0">
+                                                   <top>
+                                                      <Label text="RAM" BorderPane.alignment="CENTER" />
+                                                   </top>
+                                                   <center>
+                                                      <TextArea minHeight="-Infinity" prefHeight="0.0" prefWidth="176.0" text="text" BorderPane.alignment="CENTER" />
+                                                   </center>
+                                                </BorderPane>
+                                             </items>
+                                          </SplitPane>
+                                       </items>
+                                    </SplitPane>
+                                 </items>
+                              </SplitPane>
+                           </center>
+                        </BorderPane>
+                    </items>
+                  </SplitPane>
+               </center>
+               <bottom>
+                  <Label text="Status" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
          </content>
       </Tab>
    </tabs>
