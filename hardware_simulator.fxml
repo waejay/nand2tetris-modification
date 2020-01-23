@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="793.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/8.0.202-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Load Chip" />
+                        <MenuItem mnemonicParsing="false" text="Load Script" />
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="View">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Animate">
+                           <items>
+                              <CheckMenuItem mnemonicParsing="false" text="Program Flow" />
+                              <CheckMenuItem mnemonicParsing="false" text="Program &amp; Data Flow" />
+                              <CheckMenuItem mnemonicParsing="false" text="Unspecified Action" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="View">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Delete" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Format">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Delete" />
+                           </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Run" />
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <ToolBar prefHeight="40.0" prefWidth="200.0">
+              <items>
+                <Button mnemonicParsing="false" text="Button" />
+              </items>
+            </ToolBar>
+         </children>
+      </VBox>
+   </top>
+   <bottom>
+      <Label alignment="CENTER" text="Label" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <SplitPane dividerPositions="0.5" BorderPane.alignment="CENTER">
+         <items>
+            <SplitPane dividerPositions="0.5">
+               <items>
+                  <BorderPane>
+                     <center>
+                        <TextArea prefHeight="200.0" prefWidth="200.0" />
+                     </center>
+                     <top>
+                        <Label text="HDL Editor" BorderPane.alignment="CENTER" />
+                     </top>
+                  </BorderPane>
+                  <SplitPane dividerPositions="0.33, 0.66" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                     <items>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <top>
+                              <Label text="Label" BorderPane.alignment="CENTER" />
+                           </top>
+                           <center>
+                              <TextArea prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <top>
+                              <Label text="Label" BorderPane.alignment="CENTER" />
+                           </top>
+                           <center>
+                              <TextArea prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <top>
+                              <Label text="Label" BorderPane.alignment="CENTER" />
+                           </top>
+                           <center>
+                              <TextArea prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                           </center>
+                        </BorderPane>
+                     </items>
+                  </SplitPane>
+               </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+               <items>
+                  <BorderPane prefHeight="276.0" prefWidth="392.0">
+                     <top>
+                        <Label text="Script" BorderPane.alignment="CENTER" />
+                     </top>
+                     <center>
+                        <TextArea prefHeight="200.0" prefWidth="200.0" text="Text" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+                  <BorderPane prefHeight="275.0" prefWidth="392.0">
+                     <top>
+                        <Label text="Output File" BorderPane.alignment="CENTER" />
+                     </top>
+                     <center>
+                        <TextArea prefHeight="200.0" prefWidth="200.0" text="File Contents" BorderPane.alignment="CENTER" />
+                     </center>
+                  </BorderPane>
+               </items>
+            </SplitPane>
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>
