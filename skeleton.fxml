@@ -5,7 +5,10 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -13,13 +16,13 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<TabPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane prefHeight="717.0" prefWidth="734.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <tabs>
       <Tab text="Tab 1">
          <content>
@@ -176,60 +179,220 @@
             </VBox>
          </content>
       </Tab>
-      <Tab text="Tab 3">
+      <Tab text="VMEmulator">
          <content>
-            <VBox prefHeight="400.0" prefWidth="640.0">
-               <children>
-                  <MenuBar VBox.vgrow="NEVER">
-                     <menus>
-                        <Menu mnemonicParsing="false" text="File">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="New" />
-                              <MenuItem mnemonicParsing="false" text="Open…" />
-                              <Menu mnemonicParsing="false" text="Open Recent" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Close" />
-                              <MenuItem mnemonicParsing="false" text="Save" />
-                              <MenuItem mnemonicParsing="false" text="Save As…" />
-                              <MenuItem mnemonicParsing="false" text="Revert" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Preferences…" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Quit" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Edit">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="Undo" />
-                              <MenuItem mnemonicParsing="false" text="Redo" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Cut" />
-                              <MenuItem mnemonicParsing="false" text="Copy" />
-                              <MenuItem mnemonicParsing="false" text="Paste" />
-                              <MenuItem mnemonicParsing="false" text="Delete" />
-                              <SeparatorMenuItem mnemonicParsing="false" />
-                              <MenuItem mnemonicParsing="false" text="Select All" />
-                              <MenuItem mnemonicParsing="false" text="Unselect All" />
-                           </items>
-                        </Menu>
-                        <Menu mnemonicParsing="false" text="Help">
-                           <items>
-                              <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
-                           </items>
-                        </Menu>
-                     </menus>
-                  </MenuBar>
-                  <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <top>
+                  <VBox prefHeight="55.0" prefWidth="678.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Label alignment="CENTER" layoutX="155.0" layoutY="177.0" style="&#10;" text="Drag components from Library here…" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
+                        <MenuBar>
+                           <menus>
+                              <Menu mnemonicParsing="false" text="File">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Load Program" />
+                                    <MenuItem mnemonicParsing="false" text="Load Script" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Quit" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="View">
+                                 <items>
+                                    <Menu mnemonicParsing="false" text="Animate">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Program flow" />
+                                          <MenuItem mnemonicParsing="false" text="Program &amp; data flow" />
+                                          <MenuItem mnemonicParsing="false" text="No Animation" />
+                                       </items>
+                                    </Menu>
+                                    <Menu mnemonicParsing="false" text="View">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Script" />
+                                          <MenuItem mnemonicParsing="false" text="Output" />
+                                          <MenuItem mnemonicParsing="false" text="Compare" />
+                                          <MenuItem mnemonicParsing="false" text="Screen" />
+                                       </items>
+                                    </Menu>
+                                    <Menu mnemonicParsing="false" text="Format">
+                                       <items>
+                                          <MenuItem mnemonicParsing="false" text="Decimal" />
+                                          <MenuItem mnemonicParsing="false" text="Hexadecimal" />
+                                          <MenuItem mnemonicParsing="false" text="Binary" />
+                                       </items>
+                                    </Menu>
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Run">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Single Step" />
+                                    <MenuItem mnemonicParsing="false" text="Run" />
+                                    <MenuItem mnemonicParsing="false" text="Stop" />
+                                    <MenuItem mnemonicParsing="false" text="Reset" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Breakpoints" />
+                                 </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Help">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Usage" />
+                                    <MenuItem mnemonicParsing="false" text="Help" />
+                                 </items>
+                              </Menu>
+                           </menus>
+                        </MenuBar>
+                        <ToolBar prefHeight="40.0" prefWidth="200.0">
+                           <items>
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="16.0" text="Button" />
+                              <Separator orientation="VERTICAL" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="2.0" text="Button" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Separator orientation="VERTICAL" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
+                              <Separator orientation="VERTICAL" />
+                              <Slider blockIncrement="1.0" majorTickUnit="1.0" max="4.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" prefHeight="38.0" prefWidth="67.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+                              <SplitMenuButton minWidth="-Infinity" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="Animate">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Program flow" />
+                                    <MenuItem mnemonicParsing="false" text="Program &amp; data flow" />
+                                    <MenuItem mnemonicParsing="false" text="No animation" />
+                                 </items>
+                              </SplitMenuButton>
+                              <SplitMenuButton mnemonicParsing="false" text="View">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Program flow" />
+                                    <MenuItem mnemonicParsing="false" text="Program &amp; data flow" />
+                                    <MenuItem mnemonicParsing="false" text="No animation" />
+                                 </items>
+                              </SplitMenuButton>
+                              <SplitMenuButton mnemonicParsing="false" text="Format">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Decimal" />
+                                    <MenuItem mnemonicParsing="false" text="Hexa" />
+                                    <MenuItem mnemonicParsing="false" text="Binary" />
+                                 </items>
+                              </SplitMenuButton>
+                           </items>
+                        </ToolBar>
                      </children>
-                  </AnchorPane>
-               </children>
-            </VBox>
+                  </VBox>
+               </top>
+               <center>
+                  <SplitPane dividerPositions="0.5" prefHeight="481.0" prefWidth="678.0" BorderPane.alignment="CENTER">
+                    <items>
+                        <SplitPane dividerPositions="0.5" minHeight="-Infinity" prefHeight="446.0" prefWidth="197.0">
+                           <items>
+                              <SplitPane dividerPositions="0.4, 0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                 <items>
+                                    <BorderPane prefHeight="118.0" prefWidth="163.0">
+                                       <top>
+                                          <Label text="Program" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <TextArea minHeight="-Infinity" prefHeight="163.0" prefWidth="163.0" text="Text&#10;" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <top>
+                                          <Label text="Stack" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <TextArea minHeight="-Infinity" prefHeight="97.0" prefWidth="163.0" text="Text" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                    <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                       <top>
+                                          <Label text="Call Stack" BorderPane.alignment="CENTER" />
+                                       </top>
+                                       <center>
+                                          <TextArea minHeight="-Infinity" prefHeight="85.0" prefWidth="163.0" text="Text&#10;" BorderPane.alignment="CENTER" />
+                                       </center>
+                                    </BorderPane>
+                                 </items>
+                              </SplitPane>
+                              <SplitPane dividerPositions="0.5, 0.5, 0.5, 0.5, 0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                 <items>
+                                    <TitledPane prefHeight="200.0" prefWidth="200.0" text="Static">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="Local">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="Argument">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="This">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="That">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                    <TitledPane prefHeight="204.0" prefWidth="149.0" text="Temp">
+                                       <content>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
+                                       </content>
+                                    </TitledPane>
+                                 </items>
+                              </SplitPane>
+                           </items>
+                        </SplitPane>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <center>
+                              <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="448.0" prefWidth="334.0" BorderPane.alignment="CENTER">
+                                 <items>
+                                    <TextArea minHeight="-Infinity" prefHeight="258.0" prefWidth="378.0" />
+                                    <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+                                       <items>
+                                          <SplitPane dividerPositions="0.49722222222222223" minHeight="-Infinity" prefHeight="24.0" prefWidth="360.0">
+                                             <items>
+                                                <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="204.0" text="Button" />
+                                                <TextArea prefHeight="200.0" prefWidth="200.0" />
+                                             </items>
+                                          </SplitPane>
+                                          <SplitPane dividerPositions="0.5" prefHeight="160.0" prefWidth="200.0">
+                                             <items>
+                                                <BorderPane prefHeight="200.0" prefWidth="200.0">
+                                                   <top>
+                                                      <Label text="Global Stack" BorderPane.alignment="CENTER" />
+                                                   </top>
+                                                   <center>
+                                                      <TextArea minHeight="-Infinity" prefHeight="267.0" prefWidth="176.0" text="text" BorderPane.alignment="CENTER" />
+                                                   </center>
+                                                </BorderPane>
+                                                <BorderPane minHeight="-Infinity" prefHeight="164.0" prefWidth="176.0">
+                                                   <top>
+                                                      <Label text="RAM" BorderPane.alignment="CENTER" />
+                                                   </top>
+                                                   <center>
+                                                      <TextArea minHeight="-Infinity" prefHeight="0.0" prefWidth="176.0" text="text" BorderPane.alignment="CENTER" />
+                                                   </center>
+                                                </BorderPane>
+                                             </items>
+                                          </SplitPane>
+                                       </items>
+                                    </SplitPane>
+                                 </items>
+                              </SplitPane>
+                           </center>
+                        </BorderPane>
+                    </items>
+                  </SplitPane>
+               </center>
+               <bottom>
+                  <Label text="Status" BorderPane.alignment="CENTER" />
+               </bottom>
+            </BorderPane>
          </content>
       </Tab>
    </tabs>
