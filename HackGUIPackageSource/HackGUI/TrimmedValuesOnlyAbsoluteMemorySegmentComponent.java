@@ -17,7 +17,11 @@
 
 package HackGUI;
 
-import Hack.*;
+import Hack.ComputerParts.*;
+import Hack.Controller.*;
+import Hack.Events.*;
+import Hack.Translators.*;
+import Hack.Utilities.*;
 import javax.swing.table.*;
 import javax.swing.*;
 import java.awt.*;
