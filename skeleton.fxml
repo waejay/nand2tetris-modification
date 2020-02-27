@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.Slider?>
@@ -13,6 +18,7 @@
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -22,7 +28,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<TabPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1112.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <tabs>
       <Tab text="Tab 1">
          <content>
@@ -80,7 +86,7 @@
             </VBox>
          </content>
       </Tab>
-      <Tab text="Tab 2">
+      <Tab text="CPU">
          <content>
             <VBox prefHeight="400.0" prefWidth="640.0">
                <children>
@@ -102,7 +108,7 @@
                               <MenuItem mnemonicParsing="false" text="Quit" />
                            </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Edit">
+                        <Menu mnemonicParsing="false" text="View">
                            <items>
                               <MenuItem mnemonicParsing="false" text="Undo" />
                               <MenuItem mnemonicParsing="false" text="Redo" />
@@ -116,65 +122,140 @@
                               <MenuItem mnemonicParsing="false" text="Unselect All" />
                            </items>
                         </Menu>
-                        <Menu mnemonicParsing="false" text="Help">
+                        <Menu mnemonicParsing="false" text="Run">
                            <items>
                               <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Help">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="New" />
+                              <MenuItem mnemonicParsing="false" text="Open…" />
+                              <Menu mnemonicParsing="false" text="Open Recent" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Close" />
+                              <MenuItem mnemonicParsing="false" text="Save" />
+                              <MenuItem mnemonicParsing="false" text="Save As…" />
+                              <MenuItem mnemonicParsing="false" text="Revert" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Preferences…" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Quit" />
                            </items>
                         </Menu>
                      </menus>
                   </MenuBar>
                   <ToolBar prefHeight="40.0" prefWidth="200.0">
                     <items>
-                      <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
+                      <Button mnemonicParsing="false" text="Save" />
+                        <Separator orientation="VERTICAL" prefHeight="31.0" prefWidth="0.0" />
+                        <Button mnemonicParsing="false" text="Play" />
+                        <Button mnemonicParsing="false" text="Fast" />
+                        <Button mnemonicParsing="false" text="Stop" />
+                        <Button mnemonicParsing="false" text="Restart" />
+                        <Separator orientation="VERTICAL" prefHeight="30.0" prefWidth="0.0" />
+                        <Button mnemonicParsing="false" text="Script" />
+                        <Button mnemonicParsing="false" text="Flag" />
+                        <Separator orientation="VERTICAL" prefHeight="30.0" prefWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Speed:" />
+                        <Slider prefHeight="16.0" prefWidth="150.0" showTickMarks="true" snapToTicks="true" />
+                        <Separator orientation="VERTICAL" prefHeight="30.0" prefWidth="0.0" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Animation:" />
+                        <MenuButton mnemonicParsing="false" text="Animation">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Program flow" />
+                            <MenuItem mnemonicParsing="false" text="Program &amp; data flow" />
+                              <MenuItem mnemonicParsing="false" text="None" />
+                          </items>
+                        </MenuButton>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View:" />
+                        <MenuButton mnemonicParsing="false" text="View">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Script" />
+                              <MenuItem mnemonicParsing="false" text="Output" />
+                              <MenuItem mnemonicParsing="false" text="Compare" />
+                              <MenuItem mnemonicParsing="false" text="Screen" />
+                           </items>
+                        </MenuButton>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Format" />
+                        <MenuButton mnemonicParsing="false" text="Format">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Decimal" />
+                              <MenuItem mnemonicParsing="false" text="Hex" />
+                              <MenuItem mnemonicParsing="false" text="Binary" />
+                           </items>
+                        </MenuButton>
                     </items>
                   </ToolBar>
-                  <SplitPane dividerPositions="0.4827586206896552" prefHeight="391.0" prefWidth="640.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                  <BorderPane prefHeight="700.0" prefWidth="1280.0">
+                     <left>
+                        <VBox prefHeight="584.0" prefWidth="287.0" BorderPane.alignment="CENTER">
                            <children>
-                              <HBox prefHeight="375.0" prefWidth="308.0">
-                                 <children>
-                                    <TitledPane prefHeight="373.0" prefWidth="157.0" text="HDL Editor">
-                                       <content>
-                                          <TextArea prefHeight="321.0" prefWidth="155.0" text="Edit" />
-                                       </content>
-                                    </TitledPane>
-                                    <VBox prefHeight="375.0" prefWidth="151.0">
-                                       <children>
-                                          <SplitPane dividerPositions="0.4450402144772118" orientation="VERTICAL" prefHeight="375.0" prefWidth="190.0">
-                                             <items>
-                                                <TitledPane prefHeight="200.0" prefWidth="200.0" text="Input Pins">
-                                                   <content>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                                   </content>
-                                                </TitledPane>
-                                                <TitledPane prefHeight="204.0" prefWidth="149.0" text="Ouput Pins">
-                                                   <content>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Output" />
-                                                   </content>
-                                                </TitledPane>
-                                             </items>
-                                          </SplitPane>
-                                       </children>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                           </children>
-                        </AnchorPane>
-                      <AnchorPane prefHeight="220.0" prefWidth="445.0">
-                           <children>
-                              <TitledPane prefHeight="374.0" prefWidth="330.0" text="Output">
+                              <ToolBar prefHeight="40.0" prefWidth="280.0">
+                                <items>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="ROM" />
+                                    <MenuButton mnemonicParsing="false" prefHeight="27.0" prefWidth="42.0" text="...">
+                                      <items>
+                                        <MenuItem mnemonicParsing="false" text="Asm" />
+                                        <MenuItem mnemonicParsing="false" text="Hex" />
+                                          <MenuItem mnemonicParsing="false" text="Dec" />
+                                          <MenuItem mnemonicParsing="false" text="Bin" />
+                                      </items>
+                                    </MenuButton>
+                                  <Button mnemonicParsing="false" text="Load" />
+                                    <Button mnemonicParsing="false" text="Save" />
+                                    <Button mnemonicParsing="false" text="Search" />
+                                </items>
+                              </ToolBar>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="579.0" prefWidth="285.0" vbarPolicy="ALWAYS">
                                  <content>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="577.0" prefWidth="278.0">
+                                       <children>
+                                          <ListView prefHeight="544.0" prefWidth="282.0" />
+                                       </children>
+                                    </AnchorPane>
                                  </content>
-                              </TitledPane>
+                              </ScrollPane>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Program Counter" />
+                              <TextField prefHeight="27.0" prefWidth="150.0" />
                            </children>
-                        </AnchorPane>
-                    </items>
-                  </SplitPane>
+                           <BorderPane.margin>
+                              <Insets left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </left>
+                     <center>
+                        <VBox prefHeight="580.0" prefWidth="280.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <ToolBar maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefHeight="40.0" prefWidth="280.0">
+                                <items>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="RAM" />
+                                    <HBox prefHeight="28.0" prefWidth="94.0" />
+                                    <Button mnemonicParsing="false" text="Save" />
+                                    <Button mnemonicParsing="false" text="Search" />
+                                </items>
+                              </ToolBar>
+                              <ScrollPane hbarPolicy="NEVER" prefHeight="577.0" prefWidth="280.0" vbarPolicy="ALWAYS">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="577.0" prefWidth="278.0" />
+                                 </content>
+                              </ScrollPane>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" />
+                              <TextField />
+                           </children>
+                           <BorderPane.margin>
+                              <Insets left="20.0" right="20.0" top="20.0" />
+                           </BorderPane.margin>
+                        </VBox>
+                     </center>
+                     <right>
+                        <ScrollPane hbarPolicy="ALWAYS" prefHeight="696.0" prefWidth="595.0" BorderPane.alignment="CENTER">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                           </content>
+                        </ScrollPane>
+                     </right>
+                  </BorderPane>
                </children>
             </VBox>
          </content>
@@ -252,6 +333,7 @@
                               <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="0.0" text="Button" />
                               <Separator orientation="VERTICAL" />
                               <Slider blockIncrement="1.0" majorTickUnit="1.0" max="4.0" minHeight="-Infinity" minWidth="-Infinity" minorTickCount="0" prefHeight="38.0" prefWidth="67.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+<<<<<<< HEAD
                               <SplitMenuButton minWidth="-Infinity" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="Animate">
                                  <items>
                                     <MenuItem mnemonicParsing="false" text="Program flow" />
@@ -273,6 +355,34 @@
                                     <MenuItem mnemonicParsing="false" text="Binary" />
                                  </items>
                               </SplitMenuButton>
+=======
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Animation:" />
+                              <MenuButton mnemonicParsing="false" text="Animation">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Program flow" />
+                                    <MenuItem mnemonicParsing="false" text="Program &amp; data flow" />
+                                    <MenuItem mnemonicParsing="false" text="None" />
+                                 </items>
+                              </MenuButton>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="View:" />
+                              <MenuButton mnemonicParsing="false" text="View">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Script" />
+                                    <MenuItem mnemonicParsing="false" text="Output" />
+                                    <MenuItem mnemonicParsing="false" text="Compare" />
+                                    <MenuItem mnemonicParsing="false" text="Screen" />
+                                 </items>
+                              </MenuButton>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Format" />
+                              <MenuButton mnemonicParsing="false" text="Format">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Decimal" />
+                                    <MenuItem mnemonicParsing="false" text="Hex" />
+                                    <MenuItem mnemonicParsing="false" text="Binary" />
+                                 </items>
+                              </MenuButton>
+                              <ComboBox prefWidth="150.0" />
+>>>>>>> a7be97966f4f54b5bfcdf455b87e1d034566ad57
                            </items>
                         </ToolBar>
                      </children>
@@ -394,6 +504,11 @@
                </bottom>
             </BorderPane>
          </content>
+      </Tab>
+      <Tab text="Untitled Tab">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+        </content>
       </Tab>
    </tabs>
 </TabPane>
