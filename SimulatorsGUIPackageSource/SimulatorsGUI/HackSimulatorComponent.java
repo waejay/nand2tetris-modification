@@ -41,7 +41,8 @@ public abstract class HackSimulatorComponent extends JPanel implements HackSimul
 
         if (additionalComponent != null) {
 //            additionalComponent.setLocation(getAdditionalDisplayLocation());
-            add(additionalComponent, 1);
+//            add(additionalComponent, 1);
+            this.add(additionalComponent);
             additionalComponent.revalidate();
         }
 

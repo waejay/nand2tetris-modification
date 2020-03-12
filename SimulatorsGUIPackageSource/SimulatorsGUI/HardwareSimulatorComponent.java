@@ -332,7 +332,7 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
 
         nullLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
 //        nullLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
-        nullLayoutGatesPanel.setVisible(true);
+//        nullLayoutGatesPanel.setVisible(true);
 
         flowLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
 //        flowLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
@@ -368,18 +368,20 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
     }
 
     public void setAdditionalDisplay(JComponent additionalComponent) {
-        if (currentAdditionalDisplay == null && additionalComponent != null) {
-            if (flowLayout)
-                flowLayoutGatesPanel.setVisible(false);
-            else
-                nullLayoutGatesPanel.setVisible(false);
-        }
-        else if (currentAdditionalDisplay != null && additionalComponent == null) {
-            if (flowLayout)
-                flowLayoutGatesPanel.setVisible(true);
-            else
-                nullLayoutGatesPanel.setVisible(true);
-        }
+//        if (currentAdditionalDisplay == null && additionalComponent != null) {
+//            if (flowLayout)
+//                flowLayoutGatesPanel.setVisible(false);
+//            else
+//                nullLayoutGatesPanel.setVisible(false);
+//        }
+//        else if (currentAdditionalDisplay != null && additionalComponent == null) {
+//            if (flowLayout)
+//                flowLayoutGatesPanel.setVisible(true);
+//            else
+//                nullLayoutGatesPanel.setVisible(true);
+//        }
+        flowLayoutGatesPanel.setVisible(true);
+        nullLayoutGatesPanel.setVisible(false);
 
         super.setAdditionalDisplay(additionalComponent);
     }
