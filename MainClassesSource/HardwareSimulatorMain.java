@@ -34,7 +34,8 @@ public class HardwareSimulatorMain
             System.err.println("Usage: java HardwareSimulatorMain [script name]");
         else if (args.length == 0) {
             try {
-                UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+//                UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
             } catch (Exception e) {
             }
 

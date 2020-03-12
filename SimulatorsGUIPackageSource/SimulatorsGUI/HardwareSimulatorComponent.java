@@ -64,6 +64,7 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
 
     // The gate info component of the current gate
     private GateInfoComponent gateInfo;
+    private GridBagConstraints fi;
 
     /**
      * Constructs a new HardwareSimulatorComponent.
@@ -289,50 +290,79 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
 
     // Initialization of this component.
     private void jbInit() {
-        this.setLayout(null);
-        gateInfo.setBounds(5,10,gateInfo.getWidth(), gateInfo.getHeight());
+//        this.setLayout(null);
+
+//        this.setLayout(new GridBagLayout());
+//        GridBagConstraints c = new GridBagConstraints();
+        this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+
+        JPanel leftPanel = new JPanel();
+        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
+
+        JPanel rightPanel = new JPanel();
+        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
+
+        JPanel pinPanel = new JPanel();
+        pinPanel.setLayout(new BoxLayout(pinPanel, BoxLayout.X_AXIS));
+
+
+
+//        gateInfo.setBounds(5,10,gateInfo.getWidth(), gateInfo.getHeight());
 
         inputPins.setVisibleRows(15);
-        inputPins.setBounds(5, 53, inputPins.getWidth(), inputPins.getHeight());
+//        inputPins.setBounds(5, 53, inputPins.getWidth(), inputPins.getHeight());
 
         outputPins.setVisibleRows(15);
-        outputPins.setBounds(247, 53, outputPins.getWidth(), outputPins.getHeight());
+//        outputPins.setBounds(247, 53, outputPins.getWidth(), outputPins.getHeight());
 
         internalPins.setVisibleRows(15);
-        internalPins.setBounds(247, 332, internalPins.getWidth(), internalPins.getHeight());
+//        internalPins.setBounds(247, 332, internalPins.getWidth(), internalPins.getHeight());
         internalPins.setVisible(false);
 
         hdlView.setVisibleRows(15);
-        hdlView.setBounds(5, 332, hdlView.getWidth(), hdlView.getHeight());
+//        hdlView.setBounds(5, 332, hdlView.getWidth(), hdlView.getHeight());
 
         partPins.setVisibleRows(15);
-        partPins.setBounds(247, 332, partPins.getWidth(), partPins.getHeight());
+//        partPins.setBounds(247, 332, partPins.getWidth(), partPins.getHeight());
         partPins.setVisible(false);
 
         parts.setVisibleRows(15);
-        parts.setBounds(247, 332, parts.getWidth(), parts.getHeight());
+//        parts.setBounds(247, 332, parts.getWidth(), parts.getHeight());
         parts.setVisible(false);
 
         nullLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
-        nullLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
+//        nullLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
+        nullLayoutGatesPanel.setVisible(true);
 
         flowLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
-        flowLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
-        flowLayoutGatesPanel.setVisible(false);
+//        flowLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
+//        flowLayoutGatesPanel.setVisible(false);
 
         messageLbl.setBorder(BorderFactory.createLoweredBevelBorder());
-        messageLbl.setBounds(new Rectangle(0, 694, WIDTH - 8, 20));
+//        messageLbl.setBounds(new Rectangle(0, 694, WIDTH - 8, 20));
 
-        this.add(partPins, null);
-        this.add(hdlView, null);
-        this.add(inputPins, null);
-        this.add(outputPins, null);
-        this.add(internalPins, null);
-        this.add(parts, null);
-        this.add(messageLbl, null);
-        this.add(gateInfo, null);
-        this.add(nullLayoutGatesPanel, null);
-        this.add(flowLayoutGatesPanel, null);
+        pinPanel.add(inputPins);
+        pinPanel.add(outputPins);
+
+        leftPanel.add(gateInfo);
+        leftPanel.add(pinPanel);
+        leftPanel.add(hdlView);
+
+        rightPanel.add(flowLayoutGatesPanel);
+
+        this.add(leftPanel);
+        this.add(rightPanel);
+
+//        this.add(partPins, null);
+//        this.add(hdlView, null);
+//        this.add(inputPins, null);
+//        this.add(outputPins, null);
+//        this.add(internalPins, null);
+//        this.add(parts, null);
+//        this.add(messageLbl, null);
+//        this.add(gateInfo, null);
+//        this.add(nullLayoutGatesPanel, null);
+//        this.add(flowLayoutGatesPanel, null);
 
         setSize(WIDTH,HEIGHT);
     }

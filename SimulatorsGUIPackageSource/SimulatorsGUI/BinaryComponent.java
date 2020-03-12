@@ -202,139 +202,177 @@ public class BinaryComponent extends JPanel implements MouseListener, KeyListene
 
     // Initialization of this component.
     private void jbInit() {
-        binaryBorder = BorderFactory.createLineBorder(Color.black,3);
-        this.setLayout(null);
+//        binaryBorder = BorderFactory.createLineBorder(Color.black,3);
+        this.setLayout(new FlowLayout());
+//        this.setLayout(null);
+
         bit0.setFont(Utilities.valueFont);
         bit0.setText("0");
-        bit0.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit0.setBounds(new Rectangle(211, 8, 13, 19));
+//        bit0.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit0.setBounds(new Rectangle(211, 8, 13, 19));
         bit0.addMouseListener(this);
         bit0.addKeyListener(this);
+
         bit1.setFont(Utilities.valueFont);
         bit1.setText("0");
-        bit1.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit1.setBounds(new Rectangle(198, 8, 13, 19));
+//        bit1.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit1.setBounds(new Rectangle(198, 8, 13, 19));
         bit1.addMouseListener(this);
         bit1.addKeyListener(this);
+
         bit2.setFont(Utilities.valueFont);
         bit2.setText("0");
-        bit2.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit2.setBounds(new Rectangle(185, 8, 13, 19));
+//        bit2.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit2.setBounds(new Rectangle(185, 8, 13, 19));
         bit2.addMouseListener(this);
         bit2.addKeyListener(this);
+
         bit3.setFont(Utilities.valueFont);
         bit3.setText("0");
-        bit3.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit3.setBounds(new Rectangle(172, 8, 13, 19));
+//        bit3.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit3.setBounds(new Rectangle(172, 8, 13, 19));
         bit3.addMouseListener(this);
         bit3.addKeyListener(this);
+
         bit4.setFont(Utilities.valueFont);
         bit4.setText("0");
-        bit4.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit4.setBounds(new Rectangle(159, 8, 13, 19));
+//        bit4.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit4.setBounds(new Rectangle(159, 8, 13, 19));
         bit4.addMouseListener(this);
         bit4.addKeyListener(this);
+
         bit5.setFont(Utilities.valueFont);
         bit5.setText("0");
-        bit5.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit5.setBounds(new Rectangle(146, 8, 13, 19));
+//        bit5.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit5.setBounds(new Rectangle(146, 8, 13, 19));
         bit5.addMouseListener(this);
         bit5.addKeyListener(this);
+
         bit6.setFont(Utilities.valueFont);
         bit6.setText("0");
-        bit6.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit6.setBounds(new Rectangle(133, 8, 13, 19));
+//        bit6.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit6.setBounds(new Rectangle(133, 8, 13, 19));
         bit6.addMouseListener(this);
         bit6.addKeyListener(this);
+
         bit7.setFont(Utilities.valueFont);
         bit7.setText("0");
-        bit7.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit7.setBounds(new Rectangle(120, 8, 13, 19));
+//        bit7.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit7.setBounds(new Rectangle(120, 8, 13, 19));
         bit7.addMouseListener(this);
         bit7.addKeyListener(this);
+
         bit8.setFont(Utilities.valueFont);
         bit8.setText("0");
-        bit8.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit8.setBounds(new Rectangle(107, 8, 13, 19));
+//        bit8.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit8.setBounds(new Rectangle(107, 8, 13, 19));
         bit8.addMouseListener(this);
         bit8.addKeyListener(this);
+
         bit9.setFont(Utilities.valueFont);
         bit9.setText("0");
-        bit9.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit9.setBounds(new Rectangle(94, 8, 13, 19));
+//        bit9.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit9.setBounds(new Rectangle(94, 8, 13, 19));
         bit9.addMouseListener(this);
         bit9.addKeyListener(this);
+
         bit10.setFont(Utilities.valueFont);
         bit10.setText("0");
-        bit10.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit10.setBounds(new Rectangle(81, 8, 13, 19));
+//        bit10.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit10.setBounds(new Rectangle(81, 8, 13, 19));
         bit10.addMouseListener(this);
         bit10.addKeyListener(this);
+
         bit11.setFont(Utilities.valueFont);
         bit11.setText("0");
-        bit11.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit11.setBounds(new Rectangle(68, 8, 13, 19));
+//        bit11.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit11.setBounds(new Rectangle(68, 8, 13, 19));
         bit11.addMouseListener(this);
         bit11.addKeyListener(this);
+
         bit12.setFont(Utilities.valueFont);
         bit12.setText("0");
-        bit12.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit12.setBounds(new Rectangle(55, 8, 13, 19));
+//        bit12.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit12.setBounds(new Rectangle(55, 8, 13, 19));
         bit12.addMouseListener(this);
         bit12.addKeyListener(this);
+
         bit13.setFont(Utilities.valueFont);
         bit13.setText("0");
-        bit13.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit13.setBounds(new Rectangle(42, 8, 13, 19));
+//        bit13.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit13.setBounds(new Rectangle(42, 8, 13, 19));
         bit13.addMouseListener(this);
         bit13.addKeyListener(this);
+
         bit14.setFont(Utilities.valueFont);
         bit14.setText("0");
-        bit14.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit14.setBounds(new Rectangle(29, 8, 13, 19));
+//        bit14.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit14.setBounds(new Rectangle(29, 8, 13, 19));
         bit14.addMouseListener(this);
         bit14.addKeyListener(this);
+
         bit15.setFont(Utilities.valueFont);
         bit15.setText("0");
-        bit15.setHorizontalAlignment(SwingConstants.RIGHT);
-        bit15.setBounds(new Rectangle(16, 8, 13, 19));
+//        bit15.setHorizontalAlignment(SwingConstants.RIGHT);
+//        bit15.setBounds(new Rectangle(16, 8, 13, 19));
         bit15.addMouseListener(this);
         bit15.addKeyListener(this);
+
         okButton.setHorizontalTextPosition(SwingConstants.CENTER);
         okButton.setIcon(okIcon);
-        okButton.setBounds(new Rectangle(97, 29, 23, 20));
+//        okButton.setBounds(new Rectangle(97, 29, 23, 20));
         okButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 okButton_actionPerformed(e);
             }
         });
+
         cancelButton.setHorizontalTextPosition(SwingConstants.CENTER);
         cancelButton.setIcon(cancelIcon);
-        cancelButton.setBounds(new Rectangle(125, 29, 23, 20));
+//        cancelButton.setBounds(new Rectangle(125, 29, 23, 20));
         cancelButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 cancelButton_actionPerformed(e);
             }
         });
-        this.setBorder(binaryBorder);
-        this.add(bit15, null);
-        this.add(bit14, null);
-        this.add(bit13, null);
-        this.add(bit12, null);
-        this.add(bit11, null);
-        this.add(bit10, null);
-        this.add(bit9, null);
-        this.add(bit8, null);
-        this.add(bit7, null);
-        this.add(bit6, null);
-        this.add(bit5, null);
-        this.add(bit4, null);
-        this.add(bit3, null);
-        this.add(bit2, null);
-        this.add(bit1, null);
-        this.add(bit0, null);
-        this.add(cancelButton, null);
-        this.add(okButton, null);
+
+//        this.setBorder(binaryBorder);
+//        this.add(bit15, null);
+//        this.add(bit14, null);
+//        this.add(bit13, null);
+//        this.add(bit12, null);
+//        this.add(bit11, null);
+//        this.add(bit10, null);
+//        this.add(bit9, null);
+//        this.add(bit8, null);
+//        this.add(bit7, null);
+//        this.add(bit6, null);
+//        this.add(bit5, null);
+//        this.add(bit4, null);
+//        this.add(bit3, null);
+//        this.add(bit2, null);
+//        this.add(bit1, null);
+//        this.add(bit0, null);
+        this.add(bit0);
+        this.add(bit1);
+        this.add(bit2);
+        this.add(bit3);
+        this.add(bit4);
+        this.add(bit5);
+        this.add(bit6);
+        this.add(bit7);
+        this.add(bit8);
+        this.add(bit9);
+        this.add(bit10);
+        this.add(bit11);
+        this.add(bit12);
+        this.add(bit13);
+        this.add(bit14);
+        this.add(bit15);
+//        this.add(cancelButton, null);
+//        this.add(okButton, null);
+        this.add(cancelButton);
+        this.add(okButton);
 
         bits[0] = bit15; bits[1] = bit14; bits[2] = bit13; bits[3] = bit12;
         bits[4] = bit11; bits[5] = bit10; bits[6] = bit9; bits[7] = bit8;

@@ -771,7 +771,8 @@ public class ControllerComponent extends JFrame implements ControllerGUI,
     // Initializes this component.
     private void jbInit() {
         fileChooser.setFileFilter(new ScriptFileFilter());
-        this.getContentPane().setLayout(null);
+//        this.getContentPane().setLayout(null);
+        this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 
         Hashtable labelTable = new Hashtable();
 

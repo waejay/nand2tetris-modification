@@ -99,30 +99,35 @@ public class GateInfoComponent extends JPanel implements GateInfoGUI {
     // Initializes this component.
     private void jbInit() {
 
-        this.setLayout(null);
+//        this.setLayout(null);
+        this.setLayout(new FlowLayout());
 
         chipNameLbl.setText("Chip Name :");
-        chipNameLbl.setBounds(new Rectangle(11, 7, 74, 21));
+//        chipNameLbl.setBounds(new Rectangle(11, 7, 74, 21));
 
-        timeLbl.setBounds(new Rectangle(341, 8, 42, 21));
+//        timeLbl.setBounds(new Rectangle(341, 8, 42, 21));
         timeLbl.setText("Time :");
 
         chipNameTxt.setBackground(SystemColor.info);
         chipNameTxt.setFont(Utilities.thinBigLabelsFont);
         chipNameTxt.setEditable(false);
         chipNameTxt.setHorizontalAlignment(SwingConstants.LEFT);
-        chipNameTxt.setBounds(new Rectangle(89, 8, 231, 20));
+//        chipNameTxt.setBounds(new Rectangle(89, 8, 231, 20));
         timeTxt.setBackground(SystemColor.info);
         timeTxt.setFont(Utilities.thinBigLabelsFont);
         timeTxt.setEditable(false);
-        timeTxt.setBounds(new Rectangle(388, 8, 69, 20));
+//        timeTxt.setBounds(new Rectangle(388, 8, 69, 20));
 
-        this.add(chipNameTxt, null);
-        this.add(chipNameLbl, null);
-        this.add(timeLbl, null);
-        this.add(timeTxt, null);
+//        this.add(chipNameLbl, null);
+//        this.add(chipNameTxt, null);
+//        this.add(timeLbl, null);
+//        this.add(timeTxt, null);
 
-        setSize(483,37);
+        this.add(chipNameLbl);
+        this.add(chipNameTxt);
+        this.add(timeLbl);
+        this.add(timeTxt);
+//        setSize(483,37);
         setBorder(BorderFactory.createEtchedBorder());
     }
 }
