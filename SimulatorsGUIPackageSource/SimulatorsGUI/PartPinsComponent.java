@@ -288,7 +288,7 @@ public class PartPinsComponent extends PinsComponent implements PartPinsGUI {
         partNameLbl.setHorizontalAlignment(SwingConstants.CENTER);
         partNameLbl.setText("keyboard");
         partNameLbl.setForeground(Color.black);
-        partNameLbl.setBounds(new Rectangle(62, 10, 102, 21));
-        this.add(partNameLbl, null);
+//        partNameLbl.setBounds(new Rectangle(62, 10, 102, 21));
+        this.add(partNameLbl, BorderLayout.SOUTH);
     }
 }

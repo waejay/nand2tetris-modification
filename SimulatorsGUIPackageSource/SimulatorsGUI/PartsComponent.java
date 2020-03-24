@@ -117,7 +117,8 @@ public class PartsComponent extends JPanel implements PartsGUI {
 
     // Initialization of this component.
     private void jbInit()  {
-        this.setLayout(null);
+//        this.setLayout(null);
+        this.setLayout(new BorderLayout());
         partsTable.setFont(Utilities.valueFont);
         partsTable.getTableHeader().setReorderingAllowed(false);
         partsTable.getTableHeader().setResizingAllowed(false);
@@ -134,13 +135,13 @@ public class PartsComponent extends JPanel implements PartsGUI {
 
         setBorder(BorderFactory.createEtchedBorder());
         scrollPane = new JScrollPane(partsTable);
-        scrollPane.setLocation(0, 27);
+//        scrollPane.setLocation(0, 27);
         nameLbl.setText("Name :");
-        nameLbl.setBounds(new Rectangle(3, 3, 102, 21));
+//        nameLbl.setBounds(new Rectangle(3, 3, 102, 21));
         nameLbl.setFont(Utilities.labelsFont);
-        this.add(scrollPane, null);
-        this.add(nameLbl, null);
-        determineColumnWidth();
+        this.add(nameLbl, BorderLayout.NORTH);
+        this.add(scrollPane, BorderLayout.CENTER);
+//        determineColumnWidth();
     }
 
     /**

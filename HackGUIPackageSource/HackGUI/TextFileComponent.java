@@ -237,20 +237,49 @@ public class TextFileComponent extends JPanel implements TextFileGUI {
                 }
             }
         });
-        this.setLayout(null);
+//////////////////////////////////////////////////////////////////
+//        Old Code
+//////////////////////////////////////////////////////////////////
+//        this.setLayout(null);
+//
+//        scrollPane = new JScrollPane(textFileTable);
+//        scrollPane.setLocation(0,27);
+//        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+//        scrollPane.getHorizontalScrollBar().setUnitIncrement(scrollPane.getHorizontalScrollBar().getBlockIncrement());
+//
+//        nameLbl.setBounds(new Rectangle(3, 3, 102, 21));
+//        nameLbl.setFont(Utilities.labelsFont);
+//        textFileTable.setFont(Utilities.valueFont);
+//        setBorder(BorderFactory.createEtchedBorder());
+//
+//        this.add(scrollPane, null);
+//        this.add(nameLbl, null);
+//////////////////////////////////////////////////////////////////
+//        Old Code
+//////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
+//        My Changes
+//////////////////////////////////////////////////////////////////
+
+        this.setLayout(new BorderLayout());
 
         scrollPane = new JScrollPane(textFileTable);
-        scrollPane.setLocation(0,27);
+//        scrollPane.setLocation(0,27);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.getHorizontalScrollBar().setUnitIncrement(scrollPane.getHorizontalScrollBar().getBlockIncrement());
 
-        nameLbl.setBounds(new Rectangle(3, 3, 102, 21));
+//        nameLbl.setBounds(new Rectangle(3, 3, 102, 21));
         nameLbl.setFont(Utilities.labelsFont);
         textFileTable.setFont(Utilities.valueFont);
         setBorder(BorderFactory.createEtchedBorder());
 
-        this.add(scrollPane, null);
-        this.add(nameLbl, null);
+        this.add(nameLbl, BorderLayout.NORTH);
+        this.add(scrollPane, BorderLayout.CENTER);
+
+//////////////////////////////////////////////////////////////////
+//        My Changes
+//////////////////////////////////////////////////////////////////
 
     }
 

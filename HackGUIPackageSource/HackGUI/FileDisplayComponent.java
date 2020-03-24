@@ -115,7 +115,7 @@ public class FileDisplayComponent extends JPanel {
 
     // The initialization of this component.
     private void jbInit() {
-        setLayout(null);
+        setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         fileDisplayTable = new WideTable(new FileDisplayTableModel(), 1000);
         fileDisplayTable.setTableHeader(null);
         fileDisplayTable.setDefaultRenderer(fileDisplayTable.getColumnClass(0), new FileDisplayTableCellRenderer());
@@ -130,12 +130,12 @@ public class FileDisplayComponent extends JPanel {
 
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.getHorizontalScrollBar().setUnitIncrement(scrollPane.getHorizontalScrollBar().getBlockIncrement());
-        scrollPane.setLocation(0,0);
-        scrollPane.setPreferredSize(new Dimension(516, 260));
-        scrollPane.setSize(516, 260);
-        setSize(516,260);
+//        scrollPane.setLocation(0,0);
+//        scrollPane.setPreferredSize(new Dimension(516, 260));
+//        scrollPane.setSize(516, 260);
+//        setSize(516,260);
 
-        this.add(scrollPane, null);
+        this.add(scrollPane, 0);
     }
 
     // A model for the displayed table

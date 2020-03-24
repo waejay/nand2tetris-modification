@@ -449,9 +449,38 @@ public class PinsComponent extends JPanel implements PinsGUI, MouseListener, Pin
         pinsTable.addMouseListener(this);
         pinsTable.getTableHeader().setReorderingAllowed(false);
         pinsTable.getTableHeader().setResizingAllowed(false);
-        this.setLayout(null);
+//////////////////////////////////////////////////////////////////
+//        Old stuff commented out
+//////////////////////////////////////////////////////////////////
+//        this.setLayout(null);
+//        scrollPane = new JScrollPane(pinsTable);
+//        scrollPane.setLocation(0,27);
+//        setBorder(BorderFactory.createEtchedBorder());
+//
+//        binary.setSize(new Dimension(240,52));
+//        binary.setLayout(null);
+//        binary.setVisible(false);
+//        binary.addListener(this);
+//        determineColumnWidth();
+//        nameLbl.setText("Name :");
+//        nameLbl.setBounds(new Rectangle(3, 3, 102, 21));
+//        nameLbl.setFont(Utilities.labelsFont);
+//        pinsTable.setFont(Utilities.valueFont);
+//        this.add(binary, null);
+//        this.add(scrollPane, null);
+//        this.add(nameLbl, null);
+//////////////////////////////////////////////////////////////////
+//        Old stuff commented out
+//////////////////////////////////////////////////////////////////
+
+
+//////////////////////////////////////////////////////////////////
+//        My Changes
+//////////////////////////////////////////////////////////////////
+
+        this.setLayout(new BorderLayout());
         scrollPane = new JScrollPane(pinsTable);
-        scrollPane.setLocation(0,27);
+//        scrollPane.setLocation(0,27);
         setBorder(BorderFactory.createEtchedBorder());
 
         binary.setSize(new Dimension(240,52));
@@ -460,12 +489,19 @@ public class PinsComponent extends JPanel implements PinsGUI, MouseListener, Pin
         binary.addListener(this);
         determineColumnWidth();
         nameLbl.setText("Name :");
-        nameLbl.setBounds(new Rectangle(3, 3, 102, 21));
+//        nameLbl.setBounds(new Rectangle(3, 3, 102, 21));
         nameLbl.setFont(Utilities.labelsFont);
         pinsTable.setFont(Utilities.valueFont);
-        this.add(binary, null);
-        this.add(scrollPane, null);
-        this.add(nameLbl, null);
+//        this.add(binary, null);
+//        this.add(scrollPane, null);
+//        this.add(nameLbl, null);
+        this.add(nameLbl, BorderLayout.NORTH);
+        this.add(scrollPane, BorderLayout.CENTER);
+
+
+//////////////////////////////////////////////////////////////////
+//        My Changes
+//////////////////////////////////////////////////////////////////
 
     }
     // The action of the table gaining focus

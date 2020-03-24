@@ -289,52 +289,134 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
 
     // Initialization of this component.
     private void jbInit() {
-        this.setLayout(null);
-        gateInfo.setBounds(5,10,gateInfo.getWidth(), gateInfo.getHeight());
+
+//////////////////////////////////////////////////////////////////
+//        Old Code
+//////////////////////////////////////////////////////////////////
+
+//        this.setLayout(null);
+//        gateInfo.setBounds(5,10,gateInfo.getWidth(), gateInfo.getHeight());
+//
+//        inputPins.setVisibleRows(15);
+//        inputPins.setBounds(5, 53, inputPins.getWidth(), inputPins.getHeight());
+//
+//        outputPins.setVisibleRows(15);
+//        outputPins.setBounds(247, 53, outputPins.getWidth(), outputPins.getHeight());
+//
+//        internalPins.setVisibleRows(15);
+//        internalPins.setBounds(247, 332, internalPins.getWidth(), internalPins.getHeight());
+//        internalPins.setVisible(false);
+//
+//        hdlView.setVisibleRows(15);
+//        hdlView.setBounds(5, 332, hdlView.getWidth(), hdlView.getHeight());
+//
+//        partPins.setVisibleRows(15);
+//        partPins.setBounds(247, 332, partPins.getWidth(), partPins.getHeight());
+//        partPins.setVisible(false);
+//
+//        parts.setVisibleRows(15);
+//        parts.setBounds(247, 332, parts.getWidth(), parts.getHeight());
+//        parts.setVisible(false);
+//
+//        nullLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
+//        nullLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
+//
+//        flowLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
+//        flowLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
+//        flowLayoutGatesPanel.setVisible(false);
+//
+//        messageLbl.setBorder(BorderFactory.createLoweredBevelBorder());
+//        messageLbl.setBounds(new Rectangle(0, 694, WIDTH - 8, 20));
+//
+//        this.add(partPins, null);
+//        this.add(hdlView, null);
+//        this.add(inputPins, null);
+//        this.add(outputPins, null);
+//        this.add(internalPins, null);
+//        this.add(parts, null);
+//        this.add(messageLbl, null);
+//        this.add(gateInfo, null);
+//        this.add(nullLayoutGatesPanel, null);
+//        this.add(flowLayoutGatesPanel, null);
+//
+//        setSize(WIDTH,HEIGHT);
+//////////////////////////////////////////////////////////////////
+//        Old Code
+//////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////
+//        My Changes
+//////////////////////////////////////////////////////////////////
+
+        flowLayout = true;
+
+        this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+
+        // Will hold left and right panel
+        JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
+
+        // Will hold info, pinsPanel, hdl
+        JPanel leftPanel = new JPanel();
+        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
+
+        JPanel hdlPanel = new JPanel();
+        hdlPanel.setLayout(new BoxLayout(hdlPanel, BoxLayout.X_AXIS));
+
+        // Holds screen
+        JPanel rightPanel = new JPanel();
+        rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
+
+        // Holds pins
+        JPanel pinsPanel = new JPanel();
+        pinsPanel.setLayout(new BoxLayout(pinsPanel, BoxLayout.X_AXIS));
 
         inputPins.setVisibleRows(15);
-        inputPins.setBounds(5, 53, inputPins.getWidth(), inputPins.getHeight());
 
         outputPins.setVisibleRows(15);
-        outputPins.setBounds(247, 53, outputPins.getWidth(), outputPins.getHeight());
 
         internalPins.setVisibleRows(15);
-        internalPins.setBounds(247, 332, internalPins.getWidth(), internalPins.getHeight());
         internalPins.setVisible(false);
 
         hdlView.setVisibleRows(15);
-        hdlView.setBounds(5, 332, hdlView.getWidth(), hdlView.getHeight());
 
         partPins.setVisibleRows(15);
-        partPins.setBounds(247, 332, partPins.getWidth(), partPins.getHeight());
         partPins.setVisible(false);
 
         parts.setVisibleRows(15);
-        parts.setBounds(247, 332, parts.getWidth(), parts.getHeight());
         parts.setVisible(false);
 
         nullLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
-        nullLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
 
         flowLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
-        flowLayoutGatesPanel.setBounds(new Rectangle(492, 10, 524, 592));
         flowLayoutGatesPanel.setVisible(false);
 
         messageLbl.setBorder(BorderFactory.createLoweredBevelBorder());
-        messageLbl.setBounds(new Rectangle(0, 694, WIDTH - 8, 20));
 
-        this.add(partPins, null);
-        this.add(hdlView, null);
-        this.add(inputPins, null);
-        this.add(outputPins, null);
-        this.add(internalPins, null);
-        this.add(parts, null);
-        this.add(messageLbl, null);
-        this.add(gateInfo, null);
-        this.add(nullLayoutGatesPanel, null);
-        this.add(flowLayoutGatesPanel, null);
+        pinsPanel.add(inputPins, 0);
+        pinsPanel.add(outputPins, 1);
+
+        hdlPanel.add(hdlView, 0);
+        hdlPanel.add(internalPins, 1);
+        hdlPanel.add(partPins, 1);
+        hdlPanel.add(parts, 1);
+
+        leftPanel.add(messageLbl, 0);
+        leftPanel.add(pinsPanel, 1);
+        leftPanel.add(hdlPanel, 2);
+
+//        rightPanel.add(flowLayoutGatesPanel);
+
+//        splitPane.add(leftPanel, 0);
+//        splitPane.add(rightPanel, 1);
+
+        this.add(leftPanel, 0);
 
         setSize(WIDTH,HEIGHT);
+//
+
+//////////////////////////////////////////////////////////////////
+//        My Changes
+//////////////////////////////////////////////////////////////////
     }
 
     public void setAdditionalDisplay(JComponent additionalComponent) {

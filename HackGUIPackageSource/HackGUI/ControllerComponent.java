@@ -20,6 +20,7 @@ package HackGUI;
 import Hack.Controller.*;
 import java.io.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 import javax.swing.event.*;
 import java.awt.event.*;
 import java.awt.*;
@@ -771,8 +772,21 @@ public class ControllerComponent extends JFrame implements ControllerGUI,
     // Initializes this component.
     private void jbInit() {
         fileChooser.setFileFilter(new ScriptFileFilter());
-        this.getContentPane().setLayout(null);
+/////////////////////////////////////////////////////////////////
+//      Old Code
+/////////////////////////////////////////////////////////////////
+//        this.getContentPane().setLayout(null);
+/////////////////////////////////////////////////////////////////
+//      Old Code
+/////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////
+//      New Code
+/////////////////////////////////////////////////////////////////
+        this.getContentPane().setLayout(new BorderLayout());
+/////////////////////////////////////////////////////////////////
+//      New Code
+/////////////////////////////////////////////////////////////////
         Hashtable labelTable = new Hashtable();
 
         JLabel slowLabel = new JLabel("Slow");
@@ -898,16 +912,22 @@ public class ControllerComponent extends JFrame implements ControllerGUI,
 
         messageLbl.setFont(Utilities.statusLineFont);
         messageLbl.setBorder(BorderFactory.createLoweredBevelBorder());
-        messageLbl.setBounds(new Rectangle(0, 667, CONTROLLER_WIDTH - 8, 25));
+//        messageLbl.setBounds(new Rectangle(0, 667, CONTROLLER_WIDTH - 8, 25));
 
         toolBar = new JToolBar();
-        toolBar.setSize(new Dimension(TOOLBAR_WIDTH,TOOLBAR_HEIGHT));
+//        toolBar.setSize(new Dimension(TOOLBAR_WIDTH,TOOLBAR_HEIGHT));
         toolBar.setLayout(new FlowLayout(FlowLayout.LEFT, 3, 0));
-        toolBar.setFloatable(false);
-        toolBar.setLocation(0,0);
+//        toolBar.setFloatable(false);
+//        toolBar.setLocation(0,0);
         toolBar.setBorder(BorderFactory.createEtchedBorder());
         arrangeToolBar();
-        this.getContentPane().add(toolBar, null);
+/////////////////////////////////////////////////////////////////
+//      Old Code
+/////////////////////////////////////////////////////////////////
+//        this.getContentPane().add(toolBar, null);
+/////////////////////////////////////////////////////////////////
+//      Old Code
+/////////////////////////////////////////////////////////////////
         toolBar.revalidate();
         toolBar.repaint();
         repaint();
@@ -918,7 +938,21 @@ public class ControllerComponent extends JFrame implements ControllerGUI,
         setJMenuBar(menuBar);
 
         this.setDefaultCloseOperation(3);
-        this.getContentPane().add(messageLbl, null);
+/////////////////////////////////////////////////////////////////
+//      Old Code
+/////////////////////////////////////////////////////////////////
+//        this.getContentPane().add(messageLbl, null);
+/////////////////////////////////////////////////////////////////
+//      Old Code
+/////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////
+//      New Code
+/////////////////////////////////////////////////////////////////
+        this.getContentPane().add(toolBar, BorderLayout.NORTH);
+        this.getContentPane().add(messageLbl, BorderLayout.SOUTH);
+/////////////////////////////////////////////////////////////////
+//      New Code
+/////////////////////////////////////////////////////////////////
 
         setControllerSize();
 
