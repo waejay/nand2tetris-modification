@@ -6,10 +6,7 @@ Below is a markdown template for use with the progression of the software modifi
 
 ## Testing
 
-E# Testing
 As our project completely revolves around redeveloping the GUI of an already finished project, our testing is somewhat simplified. Most of our testing simply involves testing our new GUI to make sure the previous functionality is still there. 
-
- 
 
 ### Hardware Simulator
 - The first round of testing involves following the [Hardware Simulator Tutorial](https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_bfd91435260748439493a60a8044ade6.pdf) supplied by the original Nand-2-Tetris project. This outlines the simple use of the GUI and ensures that all of the elementary functionality is there.
@@ -18,7 +15,6 @@ As our project completely revolves around redeveloping the GUI of an already fin
 ### VMEmulator
 
 - For this GUI, we also incorporated the tutorial given by the official nand2tetris website (https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_b74d071ee4b74279b211acede232ced9.pdf). The tutorial outlines the basic uses of running the VMEmulator which has some similar interactions as the other three applications (such as the tool bar and the menu bar). 
-
 
 - In order to pinpoint the additional functionality used within the VMEmulator, it was sufficient to go through the course lessons provided within the nand2tetris website (Linked above with Hardware Simulator).
 
