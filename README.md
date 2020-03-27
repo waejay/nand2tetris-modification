@@ -4,61 +4,29 @@ This repo contains modifications to the outdated Nand to Tetris Software Suite. 
 
 Below is a markdown template for use with the progression of the software modification. Major points are to be updated with meaningful descriptions and comments to explain those updates.
 
-## Getting Started
+## Testing
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+E# Testing
+As our project completely revolves around redeveloping the GUI of an already finished project, our testing is somewhat simplified. Most of our testing simply involves testing our new GUI to make sure the previous functionality is still there. 
 
-### Prerequisites
+ 
 
-```
-[to be inserted]
-```
+### Hardware Simulator
+- The first round of testing involves following the [Hardware Simulator Tutorial](https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_bfd91435260748439493a60a8044ade6.pdf) supplied by the original Nand-2-Tetris project. This outlines the simple use of the GUI and ensures that all of the elementary functionality is there.
+- The second round of testing will be completing each of the [lessons](https://www.nand2tetris.org/course) supplied in the Nand-2-Tetris course. This show the use of the program in all of its intended ways, and will help expose the Hardware Simulator if any of the more advanced functionality is lacking
 
-### Installing
+### VMEmulator
 
-A step by step series of examples that tell you how to get a development env running
+- For this GUI, we also incorporated the tutorial given by the official nand2tetris website (https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_b74d071ee4b74279b211acede232ced9.pdf). The tutorial outlines the basic uses of running the VMEmulator which has some similar interactions as the other three applications (such as the tool bar and the menu bar). 
 
-Say what the step will be
 
-```
-Give the example
-```
+- In order to pinpoint the additional functionality used within the VMEmulator, it was sufficient to go through the course lessons provided within the nand2tetris website (Linked above with Hardware Simulator).
 
-And repeat
+### CPUEmulator
 
-```
-until finished
-```
+- Each of the CPU-related classes (CPU, CPUEmulator, CPUComponent, etc.) is being given test inputs in the driver code to test the logic and ensure the right values are being passed throughout the system. Similarly to the other emulators, the nand2tetris tutorial's walkthrough suffices as basic tests.
 
-End with an example of getting some data out of the system or using it for a little demo
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Google](http://www.google.com) - Example
 
 ## Authors
 
