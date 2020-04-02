@@ -22,6 +22,7 @@ import Hack.ComputerParts.*;
 import Hack.HardwareSimulator.*;
 import HackGUI.*;
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 import java.io.*;
 
@@ -59,11 +60,15 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
     private JPanel nullLayoutGatesPanel;
     private JPanel flowLayoutGatesPanel;
 
+    private JPanel gatesPanel;
+
     // True if the current layout is flow layout.
-    private boolean flowLayout = false;
+    private boolean flowLayout = true;
 
     // The gate info component of the current gate
     private GateInfoComponent gateInfo;
+
+    JPanel rightPanel = new JPanel();
 
     /**
      * Constructs a new HardwareSimulatorComponent.
@@ -217,73 +222,89 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
      * Adds the given gate component to the gates panel.
      */
     public void addGateComponent(Component gateComponent) {
-        if (flowLayout) {
-            flowLayoutGatesPanel.add(gateComponent);
-            flowLayoutGatesPanel.revalidate();
-            flowLayoutGatesPanel.repaint();
-        }
-        else {
-            Component[] components = nullLayoutGatesPanel.getComponents();
-            for(int i=0; i<components.length; i++) {
-                Rectangle componentBounds = components[i].getBounds();
-                int x1 = (int)componentBounds.getX();
-                int y1 = (int)componentBounds.getY();
-                int x2 = (int)(componentBounds.getX() + componentBounds.getWidth() -1);
-                int y2 = (int)(componentBounds.getY() + componentBounds.getHeight() -1);
-                if(!(gateComponent.getY() > y2 || gateComponent.getX() > x2 ||
-                     gateComponent.getY() + gateComponent.getHeight()-1 < y1  ||
-                     gateComponent.getX() + gateComponent.getWidth()-1 < x1)) {
 
-                    flowLayout = true;
-                    if (currentAdditionalDisplay == null) {
-                        nullLayoutGatesPanel.setVisible(false);
-                        flowLayoutGatesPanel.setVisible(true);
-                    }
+        gatesPanel.setVisible(true);
+        gatesPanel.add(gateComponent);
+        gatesPanel.revalidate();
+        gatesPanel.repaint();
+        return;
 
-                    for(i=0; i<components.length; i++)
-                        flowLayoutGatesPanel.add(components[i]);
-
-                    flowLayoutGatesPanel.add(gateComponent);
-
-                    break;
-                }
-            }
-            if(!flowLayout) {
-                nullLayoutGatesPanel.add(gateComponent);
-                nullLayoutGatesPanel.revalidate();
-                nullLayoutGatesPanel.repaint();
-            }
-        }
+//        if (flowLayout) {
+//            flowLayoutGatesPanel.add(gateComponent);
+//            flowLayoutGatesPanel.revalidate();
+//            flowLayoutGatesPanel.repaint();
+//        }
+//        else {
+//            Component[] components = nullLayoutGatesPanel.getComponents();
+//            for(int i=0; i<components.length; i++) {
+//                Rectangle componentBounds = components[i].getBounds();
+//                int x1 = (int)componentBounds.getX();
+//                int y1 = (int)componentBounds.getY();
+//                int x2 = (int)(componentBounds.getX() + componentBounds.getWidth() -1);
+//                int y2 = (int)(componentBounds.getY() + componentBounds.getHeight() -1);
+//                if(!(gateComponent.getY() > y2 || gateComponent.getX() > x2 ||
+//                     gateComponent.getY() + gateComponent.getHeight()-1 < y1  ||
+//                     gateComponent.getX() + gateComponent.getWidth()-1 < x1)) {
+//
+//                    flowLayout = true;
+//                    if (currentAdditionalDisplay == null) {
+//                        nullLayoutGatesPanel.setVisible(false);
+//                        flowLayoutGatesPanel.setVisible(true);
+//                    }
+//
+//                    for(i=0; i<components.length; i++)
+//                        flowLayoutGatesPanel.add(components[i]);
+//
+//                    flowLayoutGatesPanel.add(gateComponent);
+//
+//                    break;
+//                }
+//            }
+//            if(!flowLayout) {
+//                nullLayoutGatesPanel.add(gateComponent);
+//                nullLayoutGatesPanel.revalidate();
+//                nullLayoutGatesPanel.repaint();
+//            }
+//        }
     }
 
     /**
      * Removes the given gate component from the gates panel.
      */
     public void removeGateComponent(Component gateComponent) {
-        nullLayoutGatesPanel.remove(gateComponent);
-        flowLayoutGatesPanel.remove(gateComponent);
-        nullLayoutGatesPanel.revalidate();
-        flowLayoutGatesPanel.revalidate();
-        nullLayoutGatesPanel.repaint();
-        flowLayoutGatesPanel.repaint();
+//        nullLayoutGatesPanel.remove(gateComponent);
+//        flowLayoutGatesPanel.remove(gateComponent);
+//        nullLayoutGatesPanel.revalidate();
+//        flowLayoutGatesPanel.revalidate();
+//        nullLayoutGatesPanel.repaint();
+//        flowLayoutGatesPanel.repaint();
+
+
+        gatesPanel.remove(gateComponent);
+        gatesPanel.revalidate();
+        gatesPanel.repaint();
     }
 
     /**
      * Removes all the gate components from the gates panel.
      */
     public void removeAllGateComponents() {
-        nullLayoutGatesPanel.removeAll();
-        flowLayoutGatesPanel.removeAll();
-        nullLayoutGatesPanel.revalidate();
-        flowLayoutGatesPanel.revalidate();
-        nullLayoutGatesPanel.repaint();
-        flowLayoutGatesPanel.repaint();
+//        nullLayoutGatesPanel.removeAll();
+//        flowLayoutGatesPanel.removeAll();
+//        nullLayoutGatesPanel.revalidate();
+//        flowLayoutGatesPanel.revalidate();
+//        nullLayoutGatesPanel.repaint();
+//        flowLayoutGatesPanel.repaint();
+//
+//        flowLayout = false;
+//        if (currentAdditionalDisplay == null) {
+//            nullLayoutGatesPanel.setVisible(true);
+//            flowLayoutGatesPanel.setVisible(false);
+//        }
 
-        flowLayout = false;
-        if (currentAdditionalDisplay == null) {
-            nullLayoutGatesPanel.setVisible(true);
-            flowLayoutGatesPanel.setVisible(false);
-        }
+        gatesPanel.removeAll();
+        gatesPanel.revalidate();
+        gatesPanel.repaint();
     }
 
 
@@ -348,9 +369,9 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
 //        My Changes
 //////////////////////////////////////////////////////////////////
 
-        flowLayout = true;
 
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
+//        this.setLayout(new BorderLayout());
 
         // Will hold left and right panel
         JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT);
@@ -363,7 +384,6 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
         hdlPanel.setLayout(new BoxLayout(hdlPanel, BoxLayout.X_AXIS));
 
         // Holds screen
-        JPanel rightPanel = new JPanel();
         rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.Y_AXIS));
 
         // Holds pins
@@ -388,7 +408,7 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
         nullLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
 
         flowLayoutGatesPanel.setBorder(BorderFactory.createEtchedBorder());
-        flowLayoutGatesPanel.setVisible(false);
+        flowLayoutGatesPanel.setVisible(true);
 
         messageLbl.setBorder(BorderFactory.createLoweredBevelBorder());
 
@@ -409,7 +429,23 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
 //        splitPane.add(leftPanel, 0);
 //        splitPane.add(rightPanel, 1);
 
-        this.add(leftPanel, 0);
+//        this.add(leftPanel, 0);
+//        flowLayoutGatesPanel.add(new JLabel("Hello Mason"));
+//        this.add(nullLayoutGatesPanel, 0);
+
+        gatesPanel = new JPanel();
+        gatesPanel.setLayout(new BoxLayout(gatesPanel, BoxLayout.Y_AXIS));
+
+
+        this.add(leftPanel);
+        this.add(rightPanel);
+        this.add(gatesPanel);
+
+//        this.add(leftPanel, BorderLayout.WEST);
+//        this.add(rightPanel, BorderLayout.EAST);
+//        this.add(gatesPanel, BorderLayout.EAST);
+
+
 
         setSize(WIDTH,HEIGHT);
 //
@@ -434,5 +470,21 @@ public class HardwareSimulatorComponent extends HackSimulatorComponent implement
         }
 
         super.setAdditionalDisplay(additionalComponent);
+    }
+
+    @Override
+    public void trial(JComponent additionalComponent){
+        gatesPanel.setVisible(false);
+        rightPanel.add(additionalComponent, 0);
+    }
+
+    @Override
+    public void trialRemove(JComponent currentComponent, JComponent newComponent){
+        if (currentComponent != null){
+            rightPanel.remove(currentComponent);
+        }
+        if(newComponent == null) {
+            gatesPanel.setVisible(true);
+        }
     }
 }

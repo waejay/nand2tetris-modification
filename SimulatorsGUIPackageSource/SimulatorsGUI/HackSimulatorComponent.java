@@ -33,9 +33,11 @@ public abstract class HackSimulatorComponent extends JPanel implements HackSimul
     protected String usageFileName, aboutFileName;
 
     public void setAdditionalDisplay (JComponent additionalComponent) {
-        if(currentAdditionalDisplay != null) {
-            remove(currentAdditionalDisplay);
+        if(currentAdditionalDisplay != null || additionalComponent == null) {
+//            remove(currentAdditionalDisplay);
+            trialRemove(currentAdditionalDisplay, additionalComponent);
         }
+
         JComponent c = additionalComponent;
         currentAdditionalDisplay = additionalComponent;
 
@@ -54,7 +56,8 @@ public abstract class HackSimulatorComponent extends JPanel implements HackSimul
 //        My Changes
 //////////////////////////////////////////////////////////////////
 
-            add(additionalComponent, 1);
+            trial(additionalComponent);
+//            this.add(additionalComponent, 2);
             additionalComponent.revalidate();
 
 //////////////////////////////////////////////////////////////////
@@ -70,6 +73,10 @@ public abstract class HackSimulatorComponent extends JPanel implements HackSimul
      * Returns the location on the simulator panel of the additional display.
      */
     protected abstract Point getAdditionalDisplayLocation();
+
+    public abstract void trial(JComponent additionalComponent);
+
+    public abstract void trialRemove(JComponent currentComponent, JComponent newComponent);
 
     public void setUsageFileName(String fileName) {
         usageFileName = fileName;

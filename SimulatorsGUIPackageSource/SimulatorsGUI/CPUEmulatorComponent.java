@@ -20,6 +20,8 @@ package SimulatorsGUI;
 import HackGUI.*;
 import Hack.CPUEmulator.*;
 import Hack.ComputerParts.*;
+
+import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 
@@ -96,6 +98,16 @@ public class CPUEmulatorComponent extends HackSimulatorComponent implements CPUE
 
     public Point getAdditionalDisplayLocation() {
         return new Point(476, 25);
+    }
+
+    @Override
+    public void trial(JComponent additionalComponent) {
+
+    }
+
+    @Override
+    public void trialRemove(JComponent currentComponent, JComponent newComponent) {
+
     }
 
     /**

@@ -176,11 +176,14 @@ public class HardwareSimulatorControllerComponent extends ControllerComponent im
 
     // Initializing the load chip button.
     private void initLoadChipButton() {
-        loadChipIcon = new ImageIcon(Utilities.imagesDir + "chip.gif");
+        loadChipIcon = new ImageIcon(Utilities.imagesDir + "cpu.png");
+        Image chipImage = loadChipIcon.getImage();
+        Image loDefImage = chipImage.getScaledInstance(39, 39, Image.SCALE_SMOOTH);
+        loadChipIcon.setImage(loDefImage);
         loadChipButton = new MouseOverJButton();
-        loadChipButton.setMaximumSize(new Dimension(39, 39));
-        loadChipButton.setMinimumSize(new Dimension(39, 39));
-        loadChipButton.setPreferredSize(new Dimension(39, 39));
+//        loadChipButton.setMaximumSize(new Dimension(39, 39));
+//        loadChipButton.setMinimumSize(new Dimension(39, 39));
+//        loadChipButton.setPreferredSize(new Dimension(39, 39));
         loadChipButton.setToolTipText("Load Chip");
         loadChipButton.setIcon(loadChipIcon);
         loadChipButton.addActionListener(new ActionListener() {

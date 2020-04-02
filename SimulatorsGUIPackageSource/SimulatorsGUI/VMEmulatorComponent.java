@@ -215,6 +215,16 @@ public class VMEmulatorComponent extends HackSimulatorComponent implements VMEmu
         return new Point(492, 10);
     }
 
+    @Override
+    public void trial(JComponent additionalComponent) {
+
+    }
+
+    @Override
+    public void trialRemove(JComponent currentComponent, JComponent newComponent) {
+
+    }
+
     // Sets the memory component of the memory segments with the current RAM.
     private void setSegmentsRam() {
         // Setting the memory of the segments.
