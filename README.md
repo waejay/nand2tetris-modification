@@ -22,9 +22,12 @@ As our project completely revolves around redeveloping the GUI of an already fin
 
 - Each of the CPU-related classes (CPU, CPUEmulator, CPUComponent, etc.) is being given test inputs in the driver code to test the logic and ensure the right values are being passed throughout the system. Similarly to the other emulators, the nand2tetris tutorial's walkthrough suffices as basic tests.
 
-## Assembler
--The Assembler testing follows the same patter of first running through the tutorial on the Nand2Tetris website (https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_759f4f811ad14e12ac45bc60dd679fa3.pdf). Secondly it will be used to test through each of the assignments to ensure that it has full use of all of it's intended functions. Lastly it will be put through tests for robustness, wherein I will try to use it in as many ways as I can think of for which it was not intended (to make sure the GUI won't crash).
+### Assembler
+- The Assembler testing follows the same patter of first running through the tutorial on the Nand2Tetris website (https://b1391bd6-da3d-477d-8c01-38cdf774495a.filesusr.com/ugd/44046b_759f4f811ad14e12ac45bc60dd679fa3.pdf). Secondly it will be used to test through each of the assignments to ensure that it has full use of all of it's intended functions. Lastly it will be put through tests for robustness, wherein I will try to use it in as many ways as I can think of for which it was not intended (to make sure the GUI won't crash).
 
+## Deployment
+
+Like mentioned above for the description of the Testing section, our project relies on redeveloping the GUI of an old, open-source application called nand2tetris, so our deployment is simplified just as Testing is. In order to deploy the original application, all you have to do is call correlating .sh files with its location within the terminal. We plan to keep it the same, as soon as we are finished with improving the GUI. For testing purposes, we are currently deploying the application within IntelliJ to test its refined-look functionalities.
 
 ## Authors
 
