@@ -59,7 +59,7 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
 
     private MouseOverJButton fullTranslationButton;
 
-    private ImageIcon ffwdIcon = new ImageIcon("bin/images/vcrfastforward.gif");
+    private ImageIcon ffwdIcon = new ImageIcon(Utilities.imagesDir + "vcrfastforward.gif");
 
     private ImageIcon stopIcon = new ImageIcon("bin/images/vcrstop.gif");
 
@@ -319,19 +319,17 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.menuBar.add(this.helpMenu);
         this.loadSourceMenuItem = new JMenuItem("Load Source file", 79);
         this.loadSourceMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
-
-            public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.loadSourceMenuItem_actionPerformed(param1ActionEvent);
+            public void actionPerformed(ActionEvent e) {
+                loadSourceMenuItem_actionPerformed(e);
             }
         });
         this.fileMenu.add(this.loadSourceMenuItem);
         this.saveDestMenuItem = new JMenuItem("Save Destination file", 83);
         this.saveDestMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.saveDestMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.saveDestMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.fileMenu.add(this.saveDestMenuItem);
@@ -339,75 +337,75 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.exitMenuItem = new JMenuItem("Exit", 88);
         this.exitMenuItem.setAccelerator(KeyStroke.getKeyStroke(88, 8));
         this.exitMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.exitMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.exitMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.fileMenu.add(this.exitMenuItem);
         this.singleStepMenuItem = new JMenuItem("Single Step", 83);
         this.singleStepMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.singleStepMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.singleStepMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.runMenu.add(this.singleStepMenuItem);
         this.ffwdMenuItem = new JMenuItem("Fast Forward", 70);
         this.ffwdMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.ffwdMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.ffwdMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.runMenu.add(this.ffwdMenuItem);
         this.stopMenuItem = new JMenuItem("Stop", 84);
         this.stopMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.stopMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.stopMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.runMenu.add(this.stopMenuItem);
         this.rewindMenuItem = new JMenuItem("Rewind", 82);
         this.rewindMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.rewindMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.rewindMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.runMenu.add(this.rewindMenuItem);
         this.runMenu.addSeparator();
         this.fullTranslationMenuItem = new JMenuItem("Fast Translation", 85);
         this.fullTranslationMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.fullTranslationMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.fullTranslationMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.runMenu.add(this.fullTranslationMenuItem);
         this.usageMenuItem = new JMenuItem("Usage", 85);
         this.usageMenuItem.setAccelerator(KeyStroke.getKeyStroke("F1"));
         this.usageMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.usageMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.usageMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.helpMenu.add(this.usageMenuItem);
         this.aboutMenuItem = new JMenuItem("About...", 65);
         this.aboutMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
+            private TranslatorComponent translator;
 
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.aboutMenuItem_actionPerformed(param1ActionEvent);
+                this.translator.aboutMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.helpMenu.add(this.aboutMenuItem);
@@ -433,10 +431,8 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
     protected void jbInit() {
         getContentPane().setLayout((LayoutManager)null);
         this.loadButton.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.loadButton_actionPerformed(param1ActionEvent);
+                loadButton_actionPerformed(param1ActionEvent);
             }
         });
         this.loadButton.setMaximumSize(new Dimension(39, 39));
@@ -446,10 +442,8 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.loadButton.setToolTipText("Load Source File");
         this.loadButton.setIcon(this.loadIcon);
         this.saveButton.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.saveButton_actionPerformed(param1ActionEvent);
+                saveButton_actionPerformed(param1ActionEvent);
             }
         });
         this.saveButton.setMaximumSize(new Dimension(39, 39));
@@ -459,10 +453,8 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.saveButton.setToolTipText("Save Destination File");
         this.saveButton.setIcon(this.saveIcon);
         this.singleStepButton.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.singleStepButton_actionPerformed(param1ActionEvent);
+                singleStepButton_actionPerformed(param1ActionEvent);
             }
         });
         this.singleStepButton.setMaximumSize(new Dimension(39, 39));
@@ -472,23 +464,19 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.singleStepButton.setToolTipText("Single Step");
         this.singleStepButton.setIcon(this.singleStepIcon);
         this.ffwdButton.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.ffwdButton_actionPerformed(param1ActionEvent);
+                ffwdButton_actionPerformed(param1ActionEvent);
             }
         });
-        this.ffwdButton.setMaximumSize(new Dimension(39, 39));
-        this.ffwdButton.setMinimumSize(new Dimension(39, 39));
-        this.ffwdButton.setPreferredSize(new Dimension(39, 39));
-        this.ffwdButton.setSize(new Dimension(39, 39));
-        this.ffwdButton.setToolTipText("Fast Forward");
-        this.ffwdButton.setIcon(this.ffwdIcon);
+        ffwdButton.setMaximumSize(new Dimension(39, 39));
+        ffwdButton.setMinimumSize(new Dimension(39, 39));
+        ffwdButton.setPreferredSize(new Dimension(39, 39));
+        //ffwdButton.setSize(new Dimension(39, 39));
+        ffwdButton.setToolTipText("Fast Forward");
+        ffwdButton.setIcon(ffwdIcon);
         this.rewindButton.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.rewindButton_actionPerformed(param1ActionEvent);
+                rewindButton_actionPerformed(param1ActionEvent);
             }
         });
         this.rewindButton.setMaximumSize(new Dimension(39, 39));
@@ -498,10 +486,8 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.rewindButton.setToolTipText("Rewind");
         this.rewindButton.setIcon(this.rewindIcon);
         this.stopButton.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.stopButton_actionPerformed(param1ActionEvent);
+                stopButton_actionPerformed(param1ActionEvent);
             }
         });
         this.stopButton.setMaximumSize(new Dimension(39, 39));
@@ -511,10 +497,8 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.stopButton.setToolTipText("Stop");
         this.stopButton.setIcon(this.stopIcon);
         this.fullTranslationButton.addActionListener(new ActionListener() {
-            private TranslatorComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.fullTranslationButton_actionPerformed(param1ActionEvent);
+               fullTranslationButton_actionPerformed(param1ActionEvent);
             }
         });
         this.fullTranslationButton.setMaximumSize(new Dimension(39, 39));

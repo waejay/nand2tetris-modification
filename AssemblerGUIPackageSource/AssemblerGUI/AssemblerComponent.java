@@ -77,10 +77,8 @@ public class AssemblerComponent extends TranslatorComponent implements HackAssem
         this.fileMenu.add(this.loadSourceMenuItem);
         this.loadCompareMenuItem = new JMenuItem("Load Comparison File", 67);
         this.loadCompareMenuItem.addActionListener(new ActionListener() {
-            private AssemblerComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.loadCompareMenuItem_actionPerformed(param1ActionEvent);
+                loadCompareMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.fileMenu.add(this.saveDestMenuItem);
@@ -118,10 +116,8 @@ public class AssemblerComponent extends TranslatorComponent implements HackAssem
         this.comparison.setVisible(false);
         this.comparison.setBounds(new Rectangle(725, 100, this.comparison.getWidth(), this.comparison.getHeight()));
         this.compareButton.addActionListener(new ActionListener() {
-            private AssemblerComponent this$0;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.this$0.loadCompareButton_actionPerformed(param1ActionEvent);
+                loadCompareButton_actionPerformed(param1ActionEvent);
             }
         });
         this.compareButton.setMaximumSize(new Dimension(39, 39));
