@@ -1,0 +1,26 @@
+package AssemblerGUI;
+
+import java.io.File;
+import javax.swing.filechooser.FileFilter;
+
+public class ASMFileFilter extends FileFilter {
+    public boolean accept(File paramFile) {
+        if (paramFile.isDirectory())
+            return true;
+        String str = getExtension(paramFile);
+        return (str != null) ? (str.equals("asm")) : false;
+    }
+
+    public static String getExtension(File paramFile) {
+        String str1 = null;
+        String str2 = paramFile.getName();
+        int i = str2.lastIndexOf('.');
+        if (i > 0 && i < str2.length() - 1)
+            str1 = str2.substring(i + 1).toLowerCase();
+        return str1;
+    }
+
+    public String getDescription() {
+        return "ASM Files";
+    }
+}

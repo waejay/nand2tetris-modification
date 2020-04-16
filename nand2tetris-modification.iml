@@ -11,6 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/MainClassesSource" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SimulatorsGUIPackageSource" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/SimulatorsPackageSource" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/AssemblerGUIPackageSource" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/TranslatorsGUISource" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/InstallDir" />
     </content>
