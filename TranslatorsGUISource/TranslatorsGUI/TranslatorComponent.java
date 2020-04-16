@@ -8,12 +8,8 @@ import HackGUI.HTMLViewFrame;
 import HackGUI.MouseOverJButton;
 import HackGUI.TextFileComponent;
 import HackGUI.Utilities;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.LayoutManager;
-import java.awt.Rectangle;
+
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -69,7 +65,7 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
 
     private ImageIcon fullTranslationIcon = new ImageIcon("bin/images/hex.gif");
 
-    private ImageIcon loadIcon = new ImageIcon("bin/images/opendoc.gif");
+    private ImageIcon loadIcon = new ImageIcon(Utilities.imagesDir + "load.png");
 
     private ImageIcon saveIcon = new ImageIcon("bin/images/save.gif");
 
@@ -295,16 +291,16 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
     }
 
     protected void arrangeToolBar() {
-        this.toolBar.setSize(new Dimension(1016, 55));
-        this.toolBar.add((Component)this.loadButton);
-        this.toolBar.add((Component)this.saveButton);
-        this.toolBar.addSeparator(separatorDimension);
-        this.toolBar.add((Component)this.singleStepButton);
-        this.toolBar.add((Component)this.ffwdButton);
-        this.toolBar.add((Component)this.stopButton);
-        this.toolBar.add((Component)this.rewindButton);
-        this.toolBar.addSeparator(separatorDimension);
-        this.toolBar.add((Component)this.fullTranslationButton);
+        toolBar.setSize(new Dimension(1016, 55));
+        toolBar.add(loadButton);
+        toolBar.add(saveButton);
+        toolBar.addSeparator(separatorDimension);
+        toolBar.add(singleStepButton);
+        toolBar.add(ffwdButton);
+        toolBar.add(stopButton);
+        toolBar.add(rewindButton);
+        toolBar.addSeparator(separatorDimension);
+        toolBar.add(fullTranslationButton);
     }
 
     protected void arrangeMenu() {
@@ -373,63 +369,57 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.runMenu.add(this.stopMenuItem);
         this.rewindMenuItem = new JMenuItem("Rewind", 82);
         this.rewindMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent translator;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.translator.rewindMenuItem_actionPerformed(param1ActionEvent);
+                rewindMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.runMenu.add(this.rewindMenuItem);
         this.runMenu.addSeparator();
         this.fullTranslationMenuItem = new JMenuItem("Fast Translation", 85);
         this.fullTranslationMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent translator;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.translator.fullTranslationMenuItem_actionPerformed(param1ActionEvent);
+                fullTranslationMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.runMenu.add(this.fullTranslationMenuItem);
         this.usageMenuItem = new JMenuItem("Usage", 85);
         this.usageMenuItem.setAccelerator(KeyStroke.getKeyStroke("F1"));
         this.usageMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent translator;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.translator.usageMenuItem_actionPerformed(param1ActionEvent);
+               usageMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.helpMenu.add(this.usageMenuItem);
         this.aboutMenuItem = new JMenuItem("About...", 65);
         this.aboutMenuItem.addActionListener(new ActionListener() {
-            private TranslatorComponent translator;
-
             public void actionPerformed(ActionEvent param1ActionEvent) {
-                this.translator.aboutMenuItem_actionPerformed(param1ActionEvent);
+               aboutMenuItem_actionPerformed(param1ActionEvent);
             }
         });
         this.helpMenu.add(this.aboutMenuItem);
     }
 
     protected void init() {
-        this.toolBar = new JToolBar();
-        this.menuBar = new JMenuBar();
-        this.arrowLabel = new JLabel();
-        this.messageLbl = new JLabel();
-        this.listeners = new Vector();
-        this.ffwdButton = new MouseOverJButton();
-        this.rewindButton = new MouseOverJButton();
-        this.stopButton = new MouseOverJButton();
-        this.singleStepButton = new MouseOverJButton();
-        this.fullTranslationButton = new MouseOverJButton();
-        this.saveButton = new MouseOverJButton();
-        this.loadButton = new MouseOverJButton();
-        this.source = new TextFileComponent();
-        this.destination = new TextFileComponent();
+
+
+        arrowLabel = new JLabel();
+        messageLbl = new JLabel();
+        listeners = new Vector();
+        ffwdButton = new MouseOverJButton();
+        rewindButton = new MouseOverJButton();
+        stopButton = new MouseOverJButton();
+        singleStepButton = new MouseOverJButton();
+        fullTranslationButton = new MouseOverJButton();
+        saveButton = new MouseOverJButton();
+        loadButton = new MouseOverJButton();
+        source = new TextFileComponent();
+        destination = new TextFileComponent();
     }
 
     protected void jbInit() {
-        getContentPane().setLayout((LayoutManager)null);
+        //getContentPane().setLayout((LayoutManager)null);
+        this.getContentPane().setLayout(new BorderLayout());
+
         this.loadButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent param1ActionEvent) {
                 loadButton_actionPerformed(param1ActionEvent);
@@ -471,7 +461,7 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         ffwdButton.setMaximumSize(new Dimension(39, 39));
         ffwdButton.setMinimumSize(new Dimension(39, 39));
         ffwdButton.setPreferredSize(new Dimension(39, 39));
-        //ffwdButton.setSize(new Dimension(39, 39));
+        ffwdButton.setSize(new Dimension(39, 39));
         ffwdButton.setToolTipText("Fast Forward");
         ffwdButton.setIcon(ffwdIcon);
         this.rewindButton.addActionListener(new ActionListener() {
@@ -509,28 +499,39 @@ public class TranslatorComponent extends JFrame implements HackTranslatorGUI {
         this.fullTranslationButton.setIcon(this.fullTranslationIcon);
         this.messageLbl.setFont(Utilities.statusLineFont);
         this.messageLbl.setBorder(BorderFactory.createLoweredBevelBorder());
-        this.messageLbl.setBounds(new Rectangle(0, 672, 1016, 20));
-        getContentPane().add(this.messageLbl, (Object)null);
+        //this.messageLbl.setBounds(new Rectangle(0, 672, 1016, 20));
+        //getContentPane().add(this.messageLbl, (Object)null);
         this.arrowLabel.setBounds(new Rectangle(290, 324, 88, 71));
         this.arrowLabel.setIcon(this.arrowIcon);
         this.source.setVisibleRows(31);
         this.destination.setVisibleRows(31);
         this.source.setBounds(new Rectangle(35, 100, this.source.getWidth(), this.source.getHeight()));
         this.destination.setBounds(new Rectangle(375, 100, this.destination.getWidth(), this.destination.getHeight()));
-        getContentPane().add((Component)this.source, (Object)null);
-        getContentPane().add((Component)this.destination, (Object)null);
-        this.toolBar.setFloatable(false);
-        this.toolBar.setLocation(0, 0);
-        this.toolBar.setLayout(new FlowLayout(0, 3, 0));
+
+
+        getContentPane().add(this.source, BorderLayout.WEST);
+        getContentPane().add(this.destination, BorderLayout.EAST);
+
+
+        toolBar = new JToolBar();
+        toolBar.setLayout(new FlowLayout(FlowLayout.LEFT, 3, 0));
+        //this.toolBar.setFloatable(false);
+        //this.toolBar.setLocation(0, 0);
         this.toolBar.setBorder(BorderFactory.createEtchedBorder());
         arrangeToolBar();
-        getContentPane().add(this.toolBar, (Object)null);
-        this.toolBar.revalidate();
-        this.toolBar.repaint();
+        //getContentPane().add(this.toolBar, (Object)null);
+        toolBar.revalidate();
+        toolBar.repaint();
         repaint();
+
+
+        menuBar = new JMenuBar();
         arrangeMenu();
-        setJMenuBar(this.menuBar);
+        setJMenuBar(menuBar);
         setDefaultCloseOperation(3);
+        //new code
+        this.getContentPane().add(toolBar, BorderLayout.NORTH);
+        this.getContentPane().add(messageLbl, BorderLayout.SOUTH);
         setSize(new Dimension(1024, 741));
         setVisible(true);
         getContentPane().add(this.arrowLabel, (Object)null);
