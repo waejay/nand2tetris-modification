@@ -29,6 +29,10 @@ As our project completely revolves around redeveloping the GUI of an already fin
 
 Like mentioned above for the description of the Testing section, our project relies on redeveloping the GUI of an old, open-source application called nand2tetris, so our deployment is simplified just as Testing is. In order to deploy the original application, all you have to do is call correlating .sh files with its location within the terminal. We plan to keep it the same, as soon as we are finished with improving the GUI. For testing purposes, we are currently deploying the application within IntelliJ to test its refined-look functionalities.
 
+## Implementation
+
+Our project will be implemented as a standalone application that will be used as a learning tool in Dr. Grounds (and hopefully other CS professors') classes. This tool is already in use at OU, so implementing our project should be seamless. The only modification that has to do with implementation is simply now instead of several somewhat independent tools, there is one software suite. We hope that condensing everything necessary into one package will make implementing our project even easier.
+
 ## Authors
 
 * **John Bao Nguyen** - *Project Setup* - [@waejay](https://github.com/waejay)
